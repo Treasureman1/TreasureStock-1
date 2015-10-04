@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreasureStock", "TreasureStock\TreasureStock.csproj", "{6E4FA619-6DA1-4229-BA74-0957E1447627}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreasureStockEngine", "TreasureStockEngine\TreasureStockEngine.csproj", "{F3D008E8-45EC-48C5-8F7A-EAC7D83291B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E4FA619-6DA1-4229-BA74-0957E1447627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4FA619-6DA1-4229-BA74-0957E1447627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4FA619-6DA1-4229-BA74-0957E1447627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4FA619-6DA1-4229-BA74-0957E1447627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D008E8-45EC-48C5-8F7A-EAC7D83291B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D008E8-45EC-48C5-8F7A-EAC7D83291B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D008E8-45EC-48C5-8F7A-EAC7D83291B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D008E8-45EC-48C5-8F7A-EAC7D83291B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
