@@ -6,9 +6,15 @@ using System.Text;
 
 namespace TreasureStockEngine
 {
-    public class Quote : INotifyPropertyChanged
+    public class Stock : INotifyPropertyChanged
     {
         #region Declarations
+        private List<Stock> stockList;
+        private decimal movementScore;
+        private decimal movementPercent;
+        private String ticker;
+        private string companyName;
+        private decimal price;
 
         private string symbol;
         private decimal? averageDailyVolume;
@@ -68,6 +74,43 @@ namespace TreasureStockEngine
 
         #region Properties
 
+        public decimal Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+
+        public String CompanyName
+        {
+            get { return companyName; }
+            set { companyName = value; }
+        }
+
+        public decimal MovementScore
+        {
+            get { return movementScore; }
+            set { movementScore = value; }
+        }
+
+        public decimal MovementPercent
+        {
+            get { return movementPercent; }
+            set { movementPercent = value; }
+        }
+
+        public List<Stock> StockList
+        {
+            get { return stockList; }
+            set { stockList = value; }
+        }
+
+        public String Ticker
+        {
+            get { return ticker; }
+            set { ticker = value; }
+        }
+        //movementScore, movementPercent
+
         public DateTime LastUpdate
         {
             get { return lastUpdate; }
@@ -88,9 +131,10 @@ namespace TreasureStockEngine
             set
             {
                 stockExchange = value;
-                if (PropertyChanged != null) 
-                { 
-                    PropertyChanged(this, new PropertyChangedEventArgs("StockExchange")); }
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("StockExchange"));
+                }
             }
         }
 
@@ -101,9 +145,10 @@ namespace TreasureStockEngine
             set
             {
                 volume = value;
-                if (PropertyChanged != null) 
-                { 
-                    PropertyChanged(this, new PropertyChangedEventArgs("Volume")); }
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("Volume"));
+                }
             }
         }
 
@@ -113,9 +158,10 @@ namespace TreasureStockEngine
             set
             {
                 peRatio = value;
-                if (PropertyChanged != null) 
-                { 
-                    PropertyChanged(this, new PropertyChangedEventArgs("PeRatio")); }
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("PeRatio"));
+                }
             }
         }
 
@@ -125,11 +171,11 @@ namespace TreasureStockEngine
             set
             {
                 percentChangeFromTwoHundredDayMovingAverage = value;
-                if (PropertyChanged != null) 
+                if (PropertyChanged != null)
                 { PropertyChanged(this, new PropertyChangedEventArgs("PercentChangeFromTwoHundredDayMovingAverage")); }
             }
         }
-        
+
         public DateTime? DividendPayDate
         {
             get { return dividendPayDate; }
@@ -719,24 +765,44 @@ namespace TreasureStockEngine
 
         #region Constructors
 
-        public Quote(string ticker)
+        public Stock(string ticker)
         {
             symbol = ticker;
         }
 
-        public Quote()
+        public Stock()
         {
-           
+
         }
 
-    
-        public Quote GetStockData(string ticker)
+        #endregion
+
+
+        #region Methods
+
+        public void AddToList(string s)
         {
-            Quote quote = new Quote(ticker);
-            string name = quote.Name;
-            return quote;
+            //Use XML to add stocks to a list and query the list more efficienty
         }
 
+        public void AddToList(List<string> s)
+        {
+            foreach (string str in s)
+            {
+
+
+            }
+        }
+
+        public Stock GetStockData(string ticker)
+        {
+            Stock stock = new Stock(ticker);
+            string name = stock.Name;
+            return stock;
+        }
+
+     
+      
 
 
         #endregion
