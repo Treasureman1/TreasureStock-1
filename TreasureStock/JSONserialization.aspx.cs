@@ -10,7 +10,7 @@ using System.Data;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 
-namespace TreasureStock
+namespace TreasureStock 
 {
     public partial class JSONserialization : System.Web.UI.Page
     {
@@ -29,6 +29,7 @@ namespace TreasureStock
 
         private void RefreshStockQuotes()
         {
+          
             //write my onw class that inherits from that colletion  type, 
             //this will be a custom method
             //add new methods that will be able to do thin
@@ -95,9 +96,14 @@ namespace TreasureStock
             {
                 switch (quote.Symbol)
                 {
+                    
                 }
 
             }
+
+            //Use Linq to select the Top Priced Objects. 
+            //Use Linq to select the top 10 prices objects. 
+            //
 
             //Quotes.Add(new Quote("AAPL"));
             //Stocks.Add(new Stock("DRNE"));
@@ -159,14 +165,18 @@ namespace TreasureStock
                 #endregion
 
             }
+            Calculation calc = new Calculation();
+          ObservableCollection<Quote> lstQuote2 =  calc.top10(Quotes);
+                   
+            var sortedList = (from q in lstQuote orderby q.BookValue descending select q);
 
             //Sort by priceMovement(dt);
             //sort by percentMovement
             //Selete Top 100 out of a database. 
             //Do function to get the top 100 out of 3333 records. 
 
-            var jsonString = JsonConvert.SerializeObject(lstQuote);
-            grvTopMovers.DataSource = lstQuote.ToArray();
+            var jsonString = JsonConvert.SerializeObject(lstQuote2);
+            grvTopMovers.DataSource = lstQuote2.ToArray();
             grvTopMovers.DataBind();
         }
 
