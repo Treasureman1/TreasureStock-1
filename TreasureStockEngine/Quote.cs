@@ -14,11 +14,10 @@ namespace TreasureStockEngine
         private decimal? prevLastTradePrice;
         private decimal totalPriceCount;
         private decimal priceCount;
-        private decimal percentCount; //This is a note
+        private decimal percentCount; 
 
         private decimal? oldTradePrice;
         private decimal? tempOldTradePrice;
-        private decimal? itemPriceToCompare;
        
 
         private List<Stock> stockList;
