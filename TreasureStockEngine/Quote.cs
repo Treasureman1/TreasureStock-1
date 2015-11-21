@@ -10,6 +10,24 @@ namespace TreasureStockEngine
     {
         #region Declarations
 
+        private decimal? tempPrevLastTradePrice; 
+        private decimal? prevLastTradePrice;
+        private decimal totalPriceCount;
+        private decimal priceCount;
+        private decimal percentCount; //This is a note
+
+        private decimal? oldTradePrice;
+        private decimal? tempOldTradePrice;
+        private decimal? itemPriceToCompare;
+       
+
+        private List<Stock> stockList;
+        private decimal movementScore;
+        private decimal movementPercent;
+        private String ticker;
+        private string companyName;
+        private decimal price;
+
         private string symbol;
         private decimal? averageDailyVolume;
         private decimal? bid;
@@ -66,7 +84,88 @@ namespace TreasureStockEngine
 
         #endregion
 
+        #region Methods
+
+        public decimal? GetOldPrice(decimal? tempPrevLastTradePrice, decimal? LastTradePrice)
+        {
+            decimal? oldPrice = 0;
+            decimal? PrevLastTradePrice = tempPrevLastTradePrice;
+            tempPrevLastTradePrice = LastTradePrice;
+            return oldPrice;
+        }
+
+        #endregion
+
         #region Properties
+
+        public decimal? PrevLastTradePrice
+        {
+            get { return prevLastTradePrice; }
+            set
+            {
+                prevLastTradePrice = tempPrevLastTradePrice;
+                //tempPrevLastTradePrice = Convert.ToDecimal(lastTradePrice);
+
+            }
+        }
+
+        //public decimal TotalPriceCount
+        //{
+        //    get { return totalPriceCount; }
+        //    set
+        //    {
+        //        totalPriceCount = totalPriceCount + priceCount;
+        //    }
+        //}
+
+
+        //public decimal PriceCount
+        //{
+        //    get { return priceCount; }
+        //    set
+        //    {
+        //        priceCount = value;
+        //    }
+        //}
+
+
+        //public decimal Price
+        //{
+        //    get { return price; }
+        //    set { price = value; }
+        //}
+
+        //public String CompanyName
+        //{
+        //    get { return companyName; }
+        //    set { companyName = value; }
+        //}
+
+        //public decimal MovementScore
+        //{
+        //    get { return movementScore; }
+        //    set { movementScore = value; }
+        //}
+
+        //public decimal MovementPercent
+        //{
+        //    get { return movementPercent; }
+        //    set { movementPercent = value; }
+        //}
+
+        //public List<Stock> StockList
+        //{
+        //    get { return stockList; }
+        //    set { stockList = value; }
+        //}
+
+
+        public String Ticker
+        {
+            get { return symbol; }
+            set { symbol = value; }
+        }
+        //movementScore, movementPercent
 
         public DateTime LastUpdate
         {
@@ -390,6 +489,10 @@ namespace TreasureStockEngine
                 {
                     PropertyChanged(this, new PropertyChangedEventArgs("LastTradePrice"));
                 }
+                tempPrevLastTradePrice = prevLastTradePrice;
+                prevLastTradePrice = LastTradePrice;
+                tempPrevLastTradePrice = PrevLastTradePrice;
+
             }
         }
 
@@ -715,6 +818,30 @@ namespace TreasureStockEngine
             }
         }
 
+
+        public Quote GetStockData(string ticker)
+        {
+            Quote quote = new Quote(ticker);
+            string name = quote.Name;
+            return quote;
+        }
+
+
+
+        public decimal? TempPrevLastTradePrice
+        {
+            get { return GetOldPrice(tempPrevLastTradePrice, LastTradePrice); }//tempPrevLastTradePrice
+            set
+            {
+                tempPrevLastTradePrice = prevLastTradePrice;
+                //tempPrev = lastTradePrice;5
+
+            }
+        }
+
+
+
+
         #endregion
 
         #region Constructors
@@ -729,13 +856,7 @@ namespace TreasureStockEngine
            
         }
 
-    
-        public Quote GetStockData(string ticker)
-        {
-            Quote quote = new Quote(ticker);
-            string name = quote.Name;
-            return quote;
-        }
+
 
 
 

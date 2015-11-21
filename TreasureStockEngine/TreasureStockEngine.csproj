@@ -47,8 +47,8 @@
     <Compile Include="YahooFinanceQuoteEngine.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="StockData\StockListOrig.txt" />
     <Content Include="StockData\StockList.txt" />
-    <Content Include="StockData\StockListReduced.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

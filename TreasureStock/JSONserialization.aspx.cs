@@ -51,15 +51,27 @@ namespace TreasureStock
 
             var StockListPath = Server.MapPath("~/App_Data/StockList.txt");
             //System.IO.File.WriteAllText(StockListPath, "Stocks List");
+            int BatchRowCount = 300;
+            int totalBatches = (File.ReadAllLines(StockListPath).Count() / BatchRowCount) + 1;
+            int CurrentRowBatch = 0; // 32751;// 0;   //8536145;THIS NUMBER WAS WHERE WE STARTED START IMPORT IN THE MIDDLE OF FILE
+            for (int i = 0; i < totalBatches; i++)
+            {
+               string s = File.ReadAllLines(StockListPath)[0].ToString();
+                //Add just the batch of items
+                //I need to add the 300 items to a file, move to the next 300-
+                CurrentRowBatch += BatchRowCount;
+            }
 
             List<string> StockList = new List<string>();
             if (File.Exists(StockListPath))
             {
-                int rowsInBatch = 300;
+               
+                    int rowsInBatch = 300;
                 int counter = 0;
+               counter = File.ReadAllLines(StockListPath).Count();
                 foreach (var line in File.ReadAllLines(StockListPath))
                 {
-
+               
                     //Add 300 stocks per batch to a Dataset List. 
                     List<DataSet> lds = new List<DataSet>();
                     if (!StockList.Contains(line.ToUpper().ToString().Trim()))

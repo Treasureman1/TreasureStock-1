@@ -19,7 +19,8 @@ namespace TreasureStockEngine
         {
             Quote q = new Quote();
             ObservableCollection<TreasureStockEngine.Quote> refinedQuote = new ObservableCollection<TreasureStockEngine.Quote>();
-
+           
+            #region notes
             //Sort the qt List using LINQ statement
 
             //Selete only the Quoter objects with index of 10 or lower (Top 10)
@@ -30,6 +31,8 @@ namespace TreasureStockEngine
             //        refinedQuote.Add(qt1);
             //    }
             //}
+            #endregion
+
             List<Quote> SortedList = qt.OrderByDescending(o => o.Ask).ToList();
 
             //I need to figure out how to write the following
@@ -46,8 +49,6 @@ namespace TreasureStockEngine
             {
                 foreach (Quote q2 in result2)
                 {
-
-
                     //if (qt.IndexOf(q2) < 10)
                     //{
                         refinedQuote.Add(q2);
@@ -55,11 +56,15 @@ namespace TreasureStockEngine
                 }
             }
 
+            #region linq
             //var query = from pro in qt
             //            select new ProjectInfo() { Name = pro.ProjectName, Id = pro.ProjectId };
-           // return query.ToList();
+            // return query.ToList();
 
             //List<Order> SortedList = objListOrder.OrderBy(o => o.OrderDate).ToList();
+
+            #endregion
+
             return refinedQuote;
         }
    
