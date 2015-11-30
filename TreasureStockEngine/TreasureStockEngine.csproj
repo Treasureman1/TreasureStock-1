@@ -42,6 +42,9 @@
   <ItemGroup>
     <Compile Include="Quote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuoteCollection.cs" />
+    <Compile Include="QuoteLog.cs" />
+    <Compile Include="Quotes.cs" />
     <Compile Include="YahooFinanceQuoteEngine.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
