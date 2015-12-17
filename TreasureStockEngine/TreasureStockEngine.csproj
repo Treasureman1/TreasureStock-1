@@ -43,7 +43,13 @@
     <Compile Include="Calculation.cs" />
     <Compile Include="Quote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="Stock.cs" />
+=======
+    <Compile Include="QuoteCollection.cs" />
+    <Compile Include="QuoteLog.cs" />
+    <Compile Include="Quotes.cs" />
+>>>>>>> eddb23cb6b8f98d030eaec8c10617f6e3cfcf0f6
     <Compile Include="YahooFinanceQuoteEngine.cs" />
   </ItemGroup>
   <ItemGroup>
