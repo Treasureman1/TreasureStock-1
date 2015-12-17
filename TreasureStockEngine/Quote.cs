@@ -15,11 +15,9 @@ namespace TreasureStockEngine
         private decimal totalPriceCount;
         private decimal priceCount;
         private decimal percentCount; 
-
         private decimal? oldTradePrice;
         private decimal? tempOldTradePrice;
        
-
         private List<Stock> stockList;
         private decimal movementScore;
         private decimal movementPercent;

@@ -1,0 +1,27 @@
+1. Build a class that Persists the data that is gathered on the Quote object fetch
+2. Write the data for each a fetch to this list, writing the change
+3. We will calculate and fetch the quote object and pass that object to a  function Called Log Quote or something. 
+4. If there is not a change, add CurrentPriceCycles which will add 1 for each time a price does not change. 
+5. If there is a change the I will need to add the values to List<Value of attribure> so that the data can persist. 
+
+
+6. worry bout optimization later
+(Optimization options -  an object contains a certain number of values, this will need to be added to some type of histirical storage process. This could fill up the memory really quickly, but if there was a way to gather all of this historical data, and then when we choose to look over things in the past we can open up this data. I will need to give this some thoughe. Where would I store all of this data? Find out where historical land exists. After a specified amount of data gets added to the Lists of attributes, then  the object will get compressed wit an existing Compression Algorithm, and save the object to Historical Data Land, for use on Historical Lookups. On Historical Lookups, the specified time range that is selected will cause the files from that date to be decompressed at the time that they are called upon. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+notes :
+Later I want to make a spreadsheed, or document describing the saving process. 
+One Idea is that if there is no change, then you add a value 
+exponential Moving average.
