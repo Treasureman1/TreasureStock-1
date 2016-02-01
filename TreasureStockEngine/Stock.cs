@@ -8,6 +8,7 @@ namespace TreasureStockEngine
 {
     public class Stock : INotifyPropertyChanged
     {
+        //
         #region Declarations
         private List<Stock> stockList;
         private decimal movementScore;
